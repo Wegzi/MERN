@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getItems, deleteItem } from '../actions/itemActions';
+import { getItem, deleteItem } from '../actions/itemActions';
 import PropTypes from 'prop-types';
 
 class ShoppingList extends Component {
 
   onDeleteClick = (id) => {
-    this.props.deleteItems(id);
+    this.props.deleteItem(id);
   }
   componentDidMount() {
-    this.props.getItems();
+    this.props.getItem();
   }
 
 
@@ -35,7 +35,7 @@ class ShoppingList extends Component {
 }
 
 ShoppingList.propTypes = {
-  getItems: PropTypes.func.isRequired,
+  getItem: PropTypes.func.isRequired,
   item: PropTypes.object.isRequired
 };
 
@@ -44,5 +44,5 @@ const mapStateToProps = state => ({
 })
 export default connect(
   mapStateToProps,
-  { getItems,deleteItem }
+  { getItem,deleteItem }
 )(ShoppingList);

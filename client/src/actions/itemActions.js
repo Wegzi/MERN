@@ -1,18 +1,25 @@
 import {
   GET_ITEMS,
-  ADD_ITEMS,
-  DELETE_ITEMS
+  ADD_ITEM,
+  DELETE_ITEM
 } from './types';
 
-export const getItems = () => {
+export const getItem = () => {
   return {
     type: GET_ITEMS
   };
 };
 
-export const deleteItems = id => {
+export const deleteItem = id => {
   return {
-    type: DELETE_ITEMS,
+    type: DELETE_ITEM,
     payload: id
+  };
+};
+
+export const addItem = item => {
+  return {
+    type: ADD_ITEM,
+    payload: item
   };
 };
