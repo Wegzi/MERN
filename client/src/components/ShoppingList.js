@@ -19,12 +19,12 @@ class ShoppingList extends Component {
       <div className="container">
 
         <ul className="list-group mt-3">
-          {items.map(({ id, name }) => (
+          {items.map(({ _id, name }) => (
               <li className="list-group-item">
                 <button
                   type="button"
                   className="btn btn-primary mr-1"
-                  onClick={ this.onDeleteClick.bind(this, id) }>&times;</button>
+                  onClick={ this.onDeleteClick.bind(this, _id) }>&times;</button>
                 {name}
               </li>
           ))}
@@ -44,5 +44,5 @@ const mapStateToProps = state => ({
 })
 export default connect(
   mapStateToProps,
-  { getItem,deleteItem }
+  { getItem, deleteItem }
 )(ShoppingList);
