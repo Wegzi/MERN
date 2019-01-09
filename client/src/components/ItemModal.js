@@ -21,45 +21,39 @@ class ItemModal extends Component {
 
   render() {
     return(
-      <div className="container mt-3">
-        <div>
-          <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Launch demo modal
-          </button>
-          <form onSubmit={this.onSubmit}>
-            <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog">
-              <div className="modal-dialog modal-dialog-centered" role="document">
-                <div className="modal-content">
-                  <div className="modal-header">
-                    <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div className="modal-body">
-
-
-                      <div className="form-group">
-                        <label for="exampleInputEmail1">Item</label>
-                        <input
-                          type="text"
-                          name="name"
-                          id="item"
-                          className="form-control"
-                          onChange={this.onChange}
-                        ></input>
-                      </div>
-
-
-                  </div>
-                  <div className="modal-footer">
-                    <button type="submit" className="btn btn-primary">Submit</button>
-                  </div>
+      <div>
+        <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Adicionar
+        </button>
+        <form onSubmit={this.onSubmit}>
+          <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+            <div className="modal-dialog modal-dialog-centered" role="document">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div className="modal-body">
+                    <div className="form-group">
+                      <label for="exampleInputEmail1">Item</label>
+                      <input
+                        type="text"
+                        name="name"
+                        id="item"
+                        className="form-control"
+                        onChange={this.onChange}
+                      ></input>
+                    </div>
+                </div>
+                <div className="modal-footer">
+                  <button type="submit" className="btn btn-primary">Submit</button>
                 </div>
               </div>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     );
   }

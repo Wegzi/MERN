@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import { getItem, deleteItem } from '../actions/itemActions';
 import PropTypes from 'prop-types';
 
+import ItemModal from './ItemModal'
+
+
 class ShoppingList extends Component {
 
   onDeleteClick = (id) => {
@@ -16,14 +19,14 @@ class ShoppingList extends Component {
   render(){
     const { items } = this.props.item;
     return(
-      <div className="container">
-
+      <div className="container mt-3">
+        <ItemModal />
         <ul className="list-group mt-3">
           {items.map(({ _id, name }) => (
               <li className="list-group-item">
                 <button
                   type="button"
-                  className="btn btn-primary mr-1"
+                  className="btn btn-danger mr-1"
                   onClick={ this.onDeleteClick.bind(this, _id) }>&times;</button>
                 {name}
               </li>
